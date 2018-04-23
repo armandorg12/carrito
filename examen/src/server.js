@@ -3,7 +3,7 @@
 
 const Sequelize = require('sequelize');
 
-const sequelize = new Sequelize('postgres://armando:tanques50@localhost:5432/juegos');
+const sequelize = new Sequelize('postgres://armando:tanques50@35.227.59.176:5432/juegos');
 sequelize
   .authenticate()
   .then(() => {
@@ -45,7 +45,7 @@ var bodyParser = require('body-parser');
 // config app to use bodyParser()
 app.use(bodyParser.urlencoded({ extended: true}));
 app.use(bodyParser.json());
-var port = process.env.PORT || 8080; 
+var port = process.env.PORT || 8081; 
 
 // routes for our api
 var router = express.Router();

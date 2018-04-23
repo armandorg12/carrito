@@ -13,11 +13,11 @@ RUN apt-get install -y nodejs
 #install require npm packages
 COPY src/ /src/
 WORKDIR /src
-RUN npm install
+RUN npm install express
 RUN npm install cors
 
 #open up external acces to port 80
-EXPOSE 8081
+EXPOSE 3000
 
 #run startup command
 CMD ["node","/src/shop.js"]
