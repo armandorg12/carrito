@@ -110,7 +110,7 @@ export default {
   methods: {
  
   getjuego() {
-    axios.get('http://localhost:8080/api/juegos')
+    axios.get('http://35.227.59.176:8080/api/juegos')
     .then(response => {
       // JSON responses are automatically parsed.
       this.posts = response.data
@@ -121,7 +121,7 @@ export default {
   },
 
   getonejuego(idjuego) {
-    axios.get('http://localhost:8080/api/juegos/'+ idjuego)
+    axios.get('http://35.227.59.176:8080/api/juegos/'+ idjuego)
     .then(response => {
       // JSON responses are automatically parsed.
       this.juego = response.data
@@ -135,7 +135,7 @@ export default {
 
   addJuego() {
     alert(this.juego.nombre + this.juego.plataforma + this.juego.genero + this.juego.precio + this.juego.exist);
-    axios.post('http://localhost:8080/api/juegos',  this.juego)
+    axios.post('http://35.227.59.176:8080/api/juegos',  this.juego)
     .then(response => {
       alert("status: " + response.status + ", inserted: " + JSON.stringify(response.data));
     })
@@ -147,7 +147,7 @@ export default {
   updateJuego() {
     //alert(idjuego);
     alert(this.juego.id);
-    axios.put('http://localhost:8080/api/juegos/' + this.juego.id,
+    axios.put('http://35.227.59.176:8080/api/juegos/' + this.juego.id,
       this.juego)
     .then(response => {
       alert("status: " + response.status + ", updated: " + JSON.stringify(response.data));
@@ -163,7 +163,7 @@ export default {
   deleteJuego(idjuego) {
     alert("delete" + idjuego);
     
-    axios.delete('http://localhost:8080/api/juegos/' + idjuego)
+    axios.delete('http://35.227.59.176:8080/api/juegos/' + idjuego)
     .then(response => {
 
       alert("status: " + response.status + ", deleted: " + JSON.stringify(response.data));
